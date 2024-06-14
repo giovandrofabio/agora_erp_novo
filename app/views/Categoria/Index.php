@@ -3,7 +3,9 @@
         <div class="caixa">
             <div
                 class="p-2 py-1 bg-title text-light text-uppercase h4 mb-0 text-branco d-flex justify-content-space-between">
-                <span class="d-flex center-middle"><i class="far fa-list-alt mr-1"></i> Lista de categoria </span>
+                <span class="d-flex center-middle">
+                    <i class="far fa-list-alt mr-1"></i> Lista de categoria
+                </span>
                 <div>
                     <a href="<?php echo URL_BASE ."categoria/create" ?>" class="btn btn-verde mx-1 d-inline-block">
                         <i class="fas fa-plus-circle"></i> Adicionar novo</a>
@@ -20,14 +22,14 @@
                                 <label class="text-label d-block text-branco">Nome </label>
                                 <input type="text" name="categoria" value="" class="form-campo">
                             </div>
-                            <div class="col-2">
+                            <div class="col-2 flex-column" style="margin-top: 2px">
                                 <label class="text-label d-block text-branco">Ativo </label>
                                 <select name="ativo" class="form-campo">
                                     <option value="S">Sim</option>
                                     <option value="N">Não</option>
                                 </select>
                             </div>
-                            <div class="col-2 mt-1 pt-1">
+                            <div class="col-2 mt-1 pt-1 d-flex align-items-end">
                                 <input type="submit" value="Pesquisar" class="btn btn-roxo text-uppercase">
                             </div>
                         </div>

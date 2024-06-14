@@ -61,7 +61,19 @@
                         <td align="center"><?php echo $cotacao->id_cotacao ?></td>
                         <td align="center"><?php echo databr($cotacao->data_abertura) ?></td>
                         <td align="center"><span class="status status-azul"><?php echo $cotacao->status_cotacao ?></span></td>
-                        <td align="center"> <a href="compararPreco.html" class="d-inline-block btn btn-outline-roxo btn-pequeno"><i class="fas fa-edit"></i> Cotar</a></td>
+                        <?php if($cotacao->id_status_cotacao == 1) { ?>
+                            <td align="center">
+                                <a href="<?php echo URL_BASE . "cotacao/create" ?>" class="d-inline-block btn btn-outline-roxo btn-pequeno">
+                                    <i class="fas fa-edit"></i> Continuar
+                                </a>
+                            </td>
+                        <?php } else { ?>
+                            <td align="center">
+                                <a href="<?php echo URL_BASE . "cotacao/comparar/". $cotacao->id_cotacao ?>" class="d-inline-block btn btn-outline-roxo btn-pequeno">
+                                    <i class="fas fa-edit"></i> Cotar
+                                </a>
+                            </td>
+                        <?php } ?>
                     </tr>
                     <?php } ?>
                     </tbody>

@@ -23,4 +23,9 @@ class CotacaoService
         $dao = new CotacaoDao();
         return $dao->lista();
     }
+
+    public static function listaCompracaoPrecos($id_cotacao){
+        $solicitacoes = SolicitacaoService::listaPorCotacao($id_cotacao);
+        return $solicitacoes;
+    }
 }

@@ -120,4 +120,13 @@ class CotacaoController extends Controller
         $dados["view"] = "Cotacao/index";
         $this->load("template", $dados);
     }
+
+    public function comparar($id_cotacao)
+    {
+        $dados["cotacao"] = Service::get($this->tabela, $this->campo,$id_cotacao);
+        $dados["lista"]   = CotacaoService::listaCompracaoPrecos($id_cotacao);
+        $dados["view"]    = "Cotacao/Comparar";
+        $this->load("template", $dados);
+    }
+
 }

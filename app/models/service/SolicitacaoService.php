@@ -18,4 +18,9 @@ class SolicitacaoService
         $dao = new SolicitacaoDao();
         return $dao->listaPorStatus($id_status);
     }
+
+    public static function listaPorCotacao($id_cotacao){
+        $dao = new SolicitacaoDao();
+        return $dao->listaPorCotacao($id_cotacao);
+    }
 }
