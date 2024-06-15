@@ -29,7 +29,7 @@ class ItemCotacaoDao extends Model{
                     id_solicitacao = $id_solicitacao
                 AND 
                     id_cotacao     = $id_cotacao";
-        return $this->select($this->db,$sql, false);
+        return $this->select($this->db,$sql);
     }
 
 }

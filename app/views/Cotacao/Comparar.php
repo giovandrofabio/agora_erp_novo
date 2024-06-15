@@ -32,27 +32,29 @@
                                     <table cellpadding="0" cellspacing="0" class="px-4 py-3" width="100%">
                                         <thead>
                                         <tr>
-
                                             <th align="center"  width="20">Id</th>
                                             <th align="left">Fornecedor</th>
                                             <th align="center">Qtde</th>
                                             <th align="center">Valor</th>
+                                            <th align="center">Subtotal</th>
                                             <th align="center">Status</th>
                                             <th align="center">Ação</th>
                                         </tr>
                                         </thead>
                                         <tbody>
+                                        <?php foreach ($solicitacao->fornecedores as $f) { ?>
                                         <tr class="status-bg">
-                                            <td align="center">3</td>
-                                            <td align="left">maneol </td>
-                                            <td align="center">1</td>
-                                            <td align="center">1.00</td>
-                                            <td align="center">Aguardando Aprovação</td>
+                                            <td align="center"><?php echo $f->id_item_cotacao ?></td>
+                                            <td align="left"><?php echo $f->nome ?> </td>
+                                            <td align="center"><?php echo $f->qtde ?></td>
+                                            <td align="center"><?php echo $f->valor_cotacao ?></td>
+                                            <td align="center"><?php echo $f->subtotal ?></td>
+                                            <td align="center"><?php echo $f->status_item_cotacao ?></td>
                                             <td align="center">
                                                 <a href="javascript:;" onclick="aprovar_item_cotacao(this,3)" class="btn btn-pequeno d-inline-block btn-verde">Aprovar</a>
                                             </td>
                                         </tr>
-
+                                        <?php } ?>
                                         </tbody>
                                     </table>
                                 </td>
