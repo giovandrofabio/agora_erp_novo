@@ -14,4 +14,9 @@ class ItemCotacaoService {
         $dao = new ItemCotacaoDao();
         return $dao->getItemCotacaoFornecedorCotacao($id_cotacao, $id_fornecedor, $id_solicitacao);
     }
+
+    public static function listaFornecedorSolicitacaoCotacao($id_cotacao, $id_solicitacao){
+        $dao = new ItemCotacaoDao();
+        return $dao->listaFornecedorSolicitacaoCotacao($id_cotacao, $id_solicitacao);
+    }
 }
