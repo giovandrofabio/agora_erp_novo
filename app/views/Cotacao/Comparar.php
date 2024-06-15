@@ -5,6 +5,7 @@
                 <span class="d-flex center-middle mr-1"><i class="fas fa-arrow-right"></i> COTAÇÕES POR FORNECEDORES </span>
                 <a href="" class="btn btn-verde float-right px-5 h5 mb-0"><i class="fas fa-check"></i> Aprovar Todos</a>
             </div>
+            <?php foreach ($lista as $solicitacao) { ?>
             <div class="rows px-2  compra_ativo " id="class_ativo_3"  >
                 <div class="col-9 mb-3">
                     <div class="tabela-responsiva sm mt-3 tborder">
@@ -18,12 +19,12 @@
                             <tbody>
                             <tr class="status-date">
 
-                                <td align="center">3</td>
+                                <td align="center"><?php echo $solicitacao->id_solicitacao ?></td>
                                 <td align="left">
-                                    <strong class="d-block">RODA DE BRIM</strong>
-                                    <small class="datas">Data: 04/06/2020</small>
+                                    <strong class="d-block"><?php echo $solicitacao->produto ?></strong>
+                                    <small class="datas">Data: <?php echo databr($solicitacao->data_solicitacao) ?></small>
                                     <small class="datas">Data entrega: //</small>
-                                    <small class="datas">Status: Em Cotação de Preço</small>
+                                    <small class="datas">Status: <?php echo $solicitacao->status_solicitacao ?></small>
                                 </td>
                             </tr>
                             <tr>
@@ -79,7 +80,7 @@
                     </div>
                 </div>
             </div>
-
+            <?php } ?>
             <div class="rows px-2">
                 <div class="col-9 mb-3">
                     <div class="tabela-responsiva sm mt-3 tborder">

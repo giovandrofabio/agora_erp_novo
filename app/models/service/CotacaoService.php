@@ -26,6 +26,9 @@ class CotacaoService
 
     public static function listaCompracaoPrecos($id_cotacao){
         $solicitacoes = SolicitacaoService::listaPorCotacao($id_cotacao);
+        foreach ($solicitacoes as $solicitacao) {
+            $solicitacoes->fornecedores = FornecedorCotacaoService::listaPorCotacao($id_cotacao);
+        }
         return $solicitacoes;
     }
 }
